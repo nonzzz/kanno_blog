@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { serialize, resolver } from '@/app/utils'
+import { serialize, resolver } from '../../utils'
 export default defineComponent({
   name: 'Block',
   props: {

@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import AboutMe from '../../posts/about.md'
-import links from '../../link.json'
+import AboutMe from '../../../posts/about.md'
+import links from '../../../link.json'
 import Block from '../components/block/index.vue'
 export default defineComponent({
   name: 'Resume',

@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { timeConver } from '@/app/utils'
+import { timeConver } from '../../utils'
 export default defineComponent({
   props: {
     title: String,

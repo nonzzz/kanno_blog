@@ -24,9 +24,7 @@ export default defineComponent({
 
   setup() {
     const noteList = computed(() => notes.sort((pre, next) => +new Date(next.meta.date) - +new Date(pre.meta.date)))
-
     const dateTransfer = (stamp: string) => dateString(stamp)
-
     return {
       noteList,
       dateTransfer
