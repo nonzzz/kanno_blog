@@ -34,7 +34,7 @@ const renderHTML = async (vueApp: VueApp, url: string, manifest: Record<string, 
   await router.isReady()
 
   const ssrContext = {} as any
-  const html = renderToString(app, ssrContext)
+  const html = await renderToString(app, ssrContext)
   const { headTags: head } = renderHeadToString(_head)
   const preloadLinks = renderScripts(ssrContext.modules, manifest)
 
