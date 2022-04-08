@@ -10,6 +10,7 @@ import { RenderResult } from '@/ssr'
 export const devRenderServer = async (app: Koa, router: KoaRouter) => {
   const viteServer = await createServer({
     root: ROOT_PATH,
+    logLevel: 'info',
     server: {
       middlewareMode: 'ssr',
       watch: {
