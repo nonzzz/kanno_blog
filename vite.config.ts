@@ -2,8 +2,14 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-md'
 import Prism from 'prismjs'
+import path from 'path'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '/@': path.resolve(__dirname, 'src')
+    }
+  },
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/]

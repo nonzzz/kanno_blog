@@ -11,9 +11,12 @@
     "moduleResolution": "node",
     "jsx": "preserve",
     "types": ["vite/client", "@fect-ui/vue/components"],
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "paths": {
+      "@/*":["./src/*"]
+    },
   },
-  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "src/global.d.ts"],
+  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "src/global.d.ts","src/app/typings"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
