@@ -1,6 +1,6 @@
 <template>
   <div class="captured">
-    <error-component v-if="error" />
+    <error-component v-if="error" :error="error" />
     <template v-else>
       <slot />
     </template>
@@ -24,7 +24,6 @@ export default defineComponent({
       setRenderError(err)
       return false
     })
-
     return {
       error: renderError
     }

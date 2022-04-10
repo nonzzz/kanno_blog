@@ -1,18 +1,24 @@
 <template>
   <div class="not-found">
     <div class="social">
-      <span class="sub">404</span>
-      <span class="tip">This page could not be found.</span>
+      <span class="sub">{{ error.code }}</span>
+      <span class="tip">{{ error.message }}</span>
     </div>
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+import { RenderError } from '@/app/state'
 
 export default defineComponent({
   name: 'Error',
-  setup() {}
+  props: {
+    error: {
+      type: Object as PropType<RenderError>,
+      required: true
+    }
+  }
 })
 </script>
 
@@ -31,20 +37,22 @@ export default defineComponent({
 
 .not-found > .social {
   display: flex;
-  height: 40px;
+  height: 50px;
   align-items: center;
 }
 
 .not-found > .social span {
   display: block;
   height: 100%;
-  line-height: 40px;
+  text-align: center;
+  line-height: 50px;
 }
 
 .not-found > .social .sub {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 25px;
   height: 100%;
+  box-sizing: border-box;
   margin-right: var(--fect-gap-half);
 }
 .not-found > .social .tip {

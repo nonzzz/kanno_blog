@@ -28,7 +28,7 @@ const renderScripts = (data: any, manifest) => {
 }
 
 const renderHTML = async (vueApp: VueApp, url: string, manifest: Record<string, any>) => {
-  const { app, router, _document } = vueApp
+  const { app, router, _document, globalState } = vueApp
   await router.push(url)
   await router.isReady()
 
@@ -49,13 +49,15 @@ const renderHTML = async (vueApp: VueApp, url: string, manifest: Record<string, 
  */
 
 export const renderError = async (ctx: ExtendableContext, err: Error): Promise<RenderResult> => {
-  const { app, _document } = createVueAppInstance()
-  return {
+  const { app, _document, globalState } = createVueAppInstance()
+  globalState.setRenderError(err)
+  const res = {
     code: (err as any).code ?? INVALID_ERROR,
     html: await renderToString(app),
     _document: await renderToString(_document),
     preloadLinks: ''
   }
+  return res
 }
 
 // render application

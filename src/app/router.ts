@@ -61,7 +61,8 @@ const routes: RouteRecordRaw[] = [
       ssrCacheAge: false,
       async validate() {
         return Promise.reject({
-          code: NOT_FOUND
+          code: NOT_FOUND,
+          message: 'This page could not be found.'
         })
       }
     }

@@ -2,6 +2,7 @@
   <block :data-source="links">
     <AboutMe />
     <fe-dot type="success">以下是我的友站链接,排名不分先后</fe-dot>
+    <fe-spacer />
   </block>
 </template>
 

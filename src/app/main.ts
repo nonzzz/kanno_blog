@@ -28,7 +28,9 @@ export const createVueApp = (context: VueAppContext) => {
   const router = createUniveralRouter({ history: context.histroyCreator() })
 
   // handle global error
-  app.config.errorHandler = (error) => globalState.setRenderError(error)
+  app.config.errorHandler = (error) => {
+    globalState.setRenderError(error)
+  }
   // handle router error https://next.router.vuejs.org/api/#onerror
   router.onError(globalState.setRenderError)
 
