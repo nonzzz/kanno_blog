@@ -1,4 +1,4 @@
-import { isClient } from '@/environment'
+import { isClient } from '../app/envirnment'
 
 // symble
 const SSR_SYMBLE_KEY = '__SSR__'

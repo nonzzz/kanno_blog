@@ -7,6 +7,7 @@ import { CreateAppFunction } from 'vue'
 import { createHead } from '@vueuse/head'
 import { RouterHistory } from 'vue-router'
 import App from './App.vue'
+import { createGlobalState } from './state'
 import _Document from './_document.vue'
 import { UIRegister } from './plugins/ui'
 import { createUniveralRouter } from './router'
@@ -22,15 +23,34 @@ export const createVueApp = (context: VueAppContext) => {
   const app = context.appCreator(App)
   const _document = context.appCreator(_Document)
   const head = createHead()
+  const globalState = createGlobalState()
   const router = createUniveralRouter({ history: context.histroyCreator() })
 
+  // handle global error
+  app.config.errorHandler = (error) => globalState.setRenderError(error)
+  // handle router error https://next.router.vuejs.org/api/#onerror
+  router.onError(globalState.setRenderError)
+
   router.beforeEach((to, _, next) => {
-    next()
+    if (to.meta.validate) {
+      ;(to.meta as any)
+        .validate()
+        .then(next)
+        .catch((err) => {
+          const newError: any = new Error()
+          newError.code = err.code
+          newError.message = err.message
+          next(newError)
+        })
+    } else {
+      next()
+    }
   })
 
   app.use(head)
   app.use(router)
+  app.use(globalState)
   UIRegister(app)
 
-  return { app, head, router, _document }
+  return { app, head, router, _document, globalState }
 }

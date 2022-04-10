@@ -3,7 +3,7 @@
  * client readonly.
  */
 
-import { isClient, isSPA } from '@/environment'
+import { isClient, isSPA } from '../app/envirnment'
 import { ref, customRef, Ref } from 'vue'
 import { getSSRContext, setSSRContext } from './context'
 

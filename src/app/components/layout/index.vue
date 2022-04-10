@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    {{ renderError }}
     <div class="layout__container">
       <fe-spacer />
       <theme-icon :theme="theme" @click="themeChange" />
@@ -12,13 +13,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onErrorCaptured } from 'vue'
 import { useTheme } from '@fect-ui/vue'
 import { createLayoutContext } from './use-layout-context'
 import ThemeIcon from '../theme-icon/index.vue'
 import Concat from '../concat/index.vue'
 import Profile from '../profile/index.vue'
 import BLOGCONFIG from '../../../../blog.config'
+import { useGlobalState } from '../../state'
 
 export default defineComponent({
   name: 'Layout',
@@ -30,8 +32,14 @@ export default defineComponent({
   setup() {
     const { theme, themeChange } = useTheme()
     createLayoutContext(BLOGCONFIG)
+    const { renderError, setRenderError } = useGlobalState()
 
-    return { theme, themeChange }
+    onErrorCaptured((_error: any) => {
+      setRenderError(_error)
+      return false
+    })
+
+    return { theme, themeChange, renderError }
   }
 })
 </script>
