@@ -1,3 +1,8 @@
+/**
+ * @file blog config
+ * @author Kanno
+ */
+
 const CONFIG = {
   author: 'Kanno',
   title: 'Kanno.blog',
@@ -12,3 +17,5 @@ const CONFIG = {
 export type BLOG_CONFIG = typeof CONFIG
 
 export default CONFIG
+
+export { CONFIG }

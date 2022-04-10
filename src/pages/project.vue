@@ -1,19 +1,18 @@
 <template>
   <block :data-source="links">
-    <AboutMe />
-    <fe-dot type="success">以下是我的友站链接,排名不分先后</fe-dot>
+    <open-source />
   </block>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import AboutMe from '../../../posts/about.md'
-import links from '../../../link.json'
+import links from '~/open-source.json'
 import Block from '../components/block/index.vue'
+import OpenSource from '~/posts/open-source.md'
 export default defineComponent({
-  name: 'Resume',
+  name: 'Project',
   components: {
-    AboutMe,
+    OpenSource,
     Block
   },
   setup() {

@@ -8,8 +8,8 @@ import { createHead } from '@vueuse/head'
 import { RouterHistory } from 'vue-router'
 import App from './App.vue'
 import { createGlobalState } from './state'
-import _Document from './_document.vue'
-import { UIRegister } from './plugins/ui'
+import _Document from '@/components/universal/_document.vue'
+import { UIRegister } from '@/plugins/ui'
 import { createUniveralRouter } from './router'
 
 export interface VueAppContext {

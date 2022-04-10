@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { notes } from '../router'
+import { notes } from '@/app/router'
 import { dateString } from '../utils'
 
 export default defineComponent({

@@ -19,8 +19,8 @@ import { createLayoutContext } from './use-layout-context'
 import ThemeIcon from '../theme-icon/index.vue'
 import Concat from '../concat/index.vue'
 import Profile from '../profile/index.vue'
-import BLOGCONFIG from '../../../../blog.config'
-import { useGlobalState } from '../../state'
+import BLOGCONFIG from '~/blog.config'
+import { useGlobalState } from '@/app/state'
 
 export default defineComponent({
   name: 'Layout',

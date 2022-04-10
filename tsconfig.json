@@ -13,10 +13,11 @@
     "types": ["vite/client", "@fect-ui/vue/components"],
     "lib": ["esnext", "dom", "dom.iterable"],
     "paths": {
-      "@/*":["./src/*"]
-    },
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
+    }
   },
-  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "src/global.d.ts","src/app/typings"],
+  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "src/global.d.ts", "src/app/typings"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",

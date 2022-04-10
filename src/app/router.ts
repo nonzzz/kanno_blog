@@ -1,10 +1,10 @@
 import { createRouter, RouteRecordRaw, RouterHistory } from 'vue-router'
-import Notes from './pages/notes.vue'
-import Project from './pages/project.vue'
-import Resume from './pages/resume.vue'
-import Posts from './pages/posts.vue'
-import { camlize } from './utils/strings'
-import { NOT_FOUND } from '../constants/http-state'
+import Notes from '@/pages/notes.vue'
+import Project from '@/pages/project.vue'
+import Resume from '@/pages/resume.vue'
+import Posts from '@/pages/posts.vue'
+import { camlize } from '@/utils/strings'
+import { NOT_FOUND } from '@/constants/http-state'
 
 const finder = (part: Record<string, any>) => {
   return Object.keys(part).map((mod) => {

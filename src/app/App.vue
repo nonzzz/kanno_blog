@@ -6,7 +6,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import Layout from './components/layout/index.vue'
+import Layout from '@/components/layout/index.vue'
 
 export default defineComponent({
   components: {

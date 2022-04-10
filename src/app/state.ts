@@ -2,8 +2,9 @@
  * App local global state
  */
 
-import { INVALID_ERROR } from '../constants/http-state'
-import { ssrRef } from '../un/ref'
+import { INVALID_ERROR } from '@/constants/http-state'
+import { ssrRef } from '@/un/ref'
+import { CONFIG } from '~/blog.config'
 import { readonly, inject, App } from 'vue'
 
 type RenderErrorValue = RenderError | null
@@ -47,7 +48,8 @@ export const createGlobalState = () => {
 
   const globalState = {
     renderError: readonly(renderError),
-    setRenderError
+    setRenderError,
+    ...CONFIG
   }
   return {
     ...globalState,
