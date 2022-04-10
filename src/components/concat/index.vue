@@ -5,10 +5,10 @@
         <fe-link class="link" aria-label="bio" taget="_blank" href="/"> Blog </fe-link>
       </fe-grid>
       <fe-grid>
-        <fe-link class="link" :href="concatInfo.email" aria-label="email">Email</fe-link>
+        <fe-link class="link" :href="email" aria-label="email">Email</fe-link>
       </fe-grid>
       <fe-grid>
-        <fe-link class="link" :href="concatInfo.github" target="_blank" aria-label="github"> Github </fe-link>
+        <fe-link class="link" :href="github" target="_blank" aria-label="github"> Github </fe-link>
       </fe-grid>
     </fe-grid-group>
   </div>
@@ -16,16 +16,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useLayoutContext } from '../layout/use-layout-context'
+import { useGlobalState } from '@/app/state'
 export default defineComponent({
   name: 'Concat',
   setup() {
-    const context = useLayoutContext()
-    const concatInfo = {
-      email: context.email,
-      github: context.github
-    }
-    return { concatInfo }
+    const { email, github } = useGlobalState()
+
+    return { email, github }
   }
 })
 </script>

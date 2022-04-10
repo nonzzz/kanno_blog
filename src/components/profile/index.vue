@@ -1,34 +1,23 @@
 <template>
   <fe-grid class="profile">
     <fe-link class="user" to="/">
-      <fe-user :name="userInfo.author" :src="userInfo.avatar" :alt-text="userInfo.author">
+      <fe-user :name="author" :src="avatar" :alt-text="author">
         <span class="summary">
-          {{ userInfo.introduce }}
+          {{ introduce }}
         </span>
       </fe-user>
     </fe-link>
   </fe-grid>
-  <profile-links />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ProfileLinks from '../profile-links/index.vue'
-import { useLayoutContext } from '../layout/use-layout-context'
+import { useGlobalState } from '@/app/state'
 export default defineComponent({
-  components: {
-    ProfileLinks
-  },
   setup() {
-    const context = useLayoutContext()
-    const userInfo = {
-      avatar: context.avatar,
-      author: context.author,
-      introduce: context.introduce
-    }
-    return {
-      userInfo
-    }
+    const { author, avatar, introduce } = useGlobalState()
+
+    return { author, avatar, introduce }
   }
 })
 </script>

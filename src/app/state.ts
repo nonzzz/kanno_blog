@@ -5,7 +5,8 @@
 import { INVALID_ERROR } from '@/constants/http-state'
 import { ssrRef } from '@/un/ref'
 import { CONFIG } from '~/blog.config'
-import { readonly, inject, App } from 'vue'
+import { useState } from '@fect-ui/vue-hooks'
+import { readonly, inject, App, ref } from 'vue'
 
 type RenderErrorValue = RenderError | null
 export interface RenderError {
@@ -46,9 +47,15 @@ export const createGlobalState = () => {
     }
   }
 
+  // hydrated
+
+  const [isHydrated, setIsHydrate] = useState<boolean>(false)
+
   const globalState = {
     renderError: readonly(renderError),
     setRenderError,
+    isHydrated,
+    setIsHydrate,
     ...CONFIG
   }
   return {

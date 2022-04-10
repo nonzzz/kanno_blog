@@ -1,12 +1,13 @@
 <template>
-  <div class="theme-icon" title="change theme" role="button">
-    <Sun size="20" @click="clickHandler" v-if="theme === 'light-theme'" />
-    <Moon size="20" @click="clickHandler" v-else-if="theme === 'dark-theme'" />
+  <div class="theme-icon" title="change theme" role="button" @click="themeChange">
+    <Sun size="20" v-if="theme === 'light-theme'" />
+    <Moon size="20" v-else-if="theme === 'dark-theme'" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useTheme } from '@fect-ui/vue'
 import { Sun, Moon } from '@fect-ui/vue-icons'
 export default defineComponent({
   name: 'ThemeIcon',
@@ -19,10 +20,11 @@ export default defineComponent({
   },
   emits: ['click'],
   setup(props, { emit }) {
-    const clickHandler = (e: MouseEvent) => emit('click', e)
+    const { theme, themeChange } = useTheme()
 
     return {
-      clickHandler
+      theme,
+      themeChange
     }
   }
 })

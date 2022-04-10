@@ -9,7 +9,8 @@ import { RouterHistory } from 'vue-router'
 import App from './App.vue'
 import { createGlobalState } from './state'
 import _Document from '@/components/universal/_document.vue'
-import { UIRegister } from '@/plugins/ui'
+import ExtranalComponent from '@/plugins/ui'
+import InternalComponent from '@/plugins/component'
 import { createUniveralRouter } from './router'
 
 export interface VueAppContext {
@@ -49,8 +50,9 @@ export const createVueApp = (context: VueAppContext) => {
 
   app.use(head)
   app.use(router)
+  app.use(ExtranalComponent)
+  app.use(InternalComponent)
   app.use(globalState)
-  UIRegister(app)
 
   return { app, head, router, _document, globalState }
 }
