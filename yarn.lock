@@ -29,23 +29,23 @@
   resolved "https://registry.yarnpkg.com/@fect-ui/themes/-/themes-2.2.0.tgz#3042d2a9076699f6ca3ba79b6db6f7eb70d760ff"
   integrity sha512-1CIJonLeCkYqAomA+T5QqngplP7pCsf/ISDOMZSEQ4v0rvQWTxHWrMQyremiGGbDy3z5HsqrhmSPiBPvyEzrMA==
 
-"@fect-ui/vue-hooks@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@fect-ui/vue-hooks/-/vue-hooks-1.2.1.tgz#4314e4555b3b14d2529bb049454edaad55ba9930"
-  integrity sha512-riqQjDNvxliXkT7VrHPUTafE1ZN+xT0MsvZNs4jQOnbXLSScHd9/rXDtYmLmK7MhMP4a7qMdCjh/vtcnagfdHA==
+"@fect-ui/vue-hooks@^1.3.0":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@fect-ui/vue-hooks/-/vue-hooks-1.3.1.tgz#f4fec590d6df3cc78a839b782d2d3489e10fcb5d"
+  integrity sha512-kSgRzDYBq0VYuNKjqsSRlphrZBYC9kfk4lBzt+s78M0U5y0tKl1ArTDRRjHgxhYk13AqgHCDCYVXVkVfTZVxsA==
 
-"@fect-ui/vue-icons@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@fect-ui/vue-icons/-/vue-icons-2.0.0.tgz#e3786f2c27bf653f351c9696df4467a29e2b85c3"
-  integrity sha512-/ZhSicpoZIk/Ib9nZ3iTCUd8sR0JgAKB2PIZQexcwBko7XMxNOfpAbm1SPoZOB8WicaNyAr80sInzJb7+C8QYg==
+"@fect-ui/vue-icons@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@fect-ui/vue-icons/-/vue-icons-2.0.1.tgz#30942bf8816598b97a8e3ed95f99a44b75cd772b"
+  integrity sha512-RIzVcKyIoQCKkE485rmomzRaT3GRzrHnhHHmKFubhIpIOXXPLzewwfxt/hz6AOKCEnooarClcBnq8YnNLlsLUA==
 
-"@fect-ui/vue@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@fect-ui/vue/-/vue-1.5.0.tgz#4143c8ed640b8cf4bdfefa35f980f6f5c75034b1"
-  integrity sha512-m0g1YM92rd5/4MC+4QsQnbY6L4HVHP40IlM8fAK2A+do7cPnSeaGN9zu+TfE6ph+DccE8D6I7DrMlfIQH9PtJQ==
+"@fect-ui/vue@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@fect-ui/vue/-/vue-1.5.1.tgz#2b12ab130ffc09a95752097bb919c912711d54de"
+  integrity sha512-/xbs+FC8dweZPfUSq4xQ+UvzHjMQSjMcQaNTgVv9MmMTetDJkuPW8kHTlpT5KWtH7X7HcxpPwvQPcvGuKe97zQ==
   dependencies:
     "@fect-ui/themes" "^2.2.0"
-    "@fect-ui/vue-hooks" "^1.2.1"
+    "@fect-ui/vue-hooks" "^1.3.0"
     "@popperjs/core" "^2.11.2"
     proy "^0.0.3"
 
