@@ -50,8 +50,8 @@
     "vite-plugin-md": "^0.13.0"
   },
   "dependencies": {
-    "@fect-ui/vue": "^1.5.1",
-    "@fect-ui/vue-icons": "^2.0.1",
+    "@fect-ui/vue": "^1.5.2",
+    "@fect-ui/vue-icons": "^2.1.0",
     "js-cookie": "^3.0.1",
     "prismjs": "^1.26.0",
     "serialize-javascript": "^6.0.0",
